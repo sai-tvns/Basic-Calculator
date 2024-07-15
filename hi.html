@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        #main{width: 320px; height: 300px; background-color: black;}
+        input{width: 20%; height: 40px; font-size: 20px; margin: 6px;}
+        #aa{width:94%; height: 50px; background-color: silver;}
+    </style>
+</head>
+<body>
+    <div id = "main">
+        <form name = "f">
+            <input type = "text" name = "asd" placeholder = "0" id ="aa"> <br> <br>
+            <input type = "button" value = "1" onclick = "f.asd.value += 1">
+            <input type = "button" value = "2" onclick = "f.asd.value += 2">
+            <input type = "button" value = "3" onclick = "f.asd.value += 3">
+            <input type = "button" value = "+" onclick = "add()">
+            <br>
+            <input type = "button" value = "4" onclick = "f.asd.value += 4">
+            <input type = "button" value = "5" onclick = "f.asd.value += 5">
+            <input type = "button" value = "6" onclick = "f.asd.value += 6">            
+            <input type = "button" value = "-" onclick = "sub()">
+            <br>
+            <input type = "button" value = "7" onclick = "f.asd.value += 7">
+            <input type = "button" value = "8" onclick = "f.asd.value += 8">
+            <input type = "button" value = "9" onclick = "f.asd.value += 9">
+            <input type = "button" value = "/" onclick = "div()">
+            <br>
+            <input type = "button" value = "c" onclick = "f.asd.value = ''">
+            <input type = "button" value = "0" onclick = "f.asd.value += 0">
+            <input type = "button" value = "=" onclick = "f.asd.value = eval(f.asd.value)">
+            <input type = "button" value = "x" onclick = "multiply()">
+            <br>
+        </form>
+    </div>
+    
+
+    <script>
+        function add(){
+            var act = 0, b=0;
+            act= f.asd.value;
+            b = act.charAt(act.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.asd.value = act.substring(0,act.length-1);
+                f.asd.value += '+';
+            }
+            else{
+                f.asd.value += '+';
+            }
+        }
+
+        function sub(){
+            var act = 0, b=0;
+            act = f.asd.value;
+            b = act.charAt(act.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.asd.value = act.substring(0,act.length-1);
+                f.asd.value += '-';
+            }
+            else{
+                f.asd.value += '-';
+            }
+        }
+
+        function div(){
+            var e = 0, b=0;
+            act = f.asd.value;
+            act = act.charAt(act.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.asd.value = act.substring(0,act.length-1);
+                f.asd.value += '/';
+            }
+            else{
+                f.asd.value += '/';
+            }
+        }
+
+        function multiply(){
+            var act = 0, b=0;
+            act = f.asd.value;
+            b = act.charAt(act.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.asd.value = act.substring(0,act.length-1);
+                f.asd.value += '*';
+            }
+            else{
+                f.asd.value += '*';
+            }
+        }
+
+
+        
+
+    </script>
+</body>
+</html>
